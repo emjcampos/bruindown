@@ -1,26 +1,24 @@
-Package: gauchodown
-Title: An R Markdown thesis template for the University of California Santa Barbara
+Package: bruindown
+Title: An R Markdown thesis template for the University of California Los Angeles
 Version: 1.0
 Authors@R: c(
-    person("Ovando", "Dan", email = "dovando07@gmail.com", role = "aut"),
-    person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = "aut"),
-    person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
-    person("Ben", "Marwick", email = "benmarwick@gmail.com", role = c("cre", "aut")))
-Description: Using the bookdown package and LaTeX and Word thesis templates from
-    UC Santa Barbara, this package aims to encourage reproducible research using
+    person("Campos", "Emilie", email = "emjcampos00@gmail.com", role = c("cre", "aut")))
+Description: Using the bookdown package and LaTeX and Word thesis templates 
+    from UCLA, this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots
     and analyses as well. Based on Chester Ismay's thesisdown.
-Maintainer: Dan Ovando <dovando07@gmail.com>
+Maintainer: Emilie Campos <emjcampos00@gmail.com>
 Depends:
-    R (>= 3.4.4)
+    R (>= 3.6)
 Imports:
     bookdown,
     rmarkdown,
     knitr,
     tinytex,
-    devtools,
-    dplyr,
-    ggplot2
+    devtools, 
+    ggplot2, 
+    dplyr, 
+    git2r
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

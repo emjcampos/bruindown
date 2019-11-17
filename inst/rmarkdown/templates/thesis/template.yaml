@@ -1,4 +1,4 @@
-name:  UCSB-Dissertation
+name:  UCLA-Dissertation
 description: >
- Template for creating a PhD Thesis at UCSB using R Markdown based on the UCSB LaTeX template and the R bookdown package.
+ Template for creating a PhD Thesis at UCLA using R Markdown based on the UCLA LaTeX template and the R bookdown package.
 

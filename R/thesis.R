@@ -13,7 +13,7 @@
 #' @import bookdown
 #' @examples
 #' \dontrun{
-#'  output: gauchdown::thesis_pdf
+#'  output: bruindown::thesis_pdf
 #' }
 thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", ...){
 
@@ -48,7 +48,7 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", ...){
 #' @import bookdown
 #' @examples
 #' \dontrun{
-#'  output: gauchodown::thesis_gitbook
+#'  output: bruindown::thesis_gitbook
 #' }
 thesis_gitbook <- function(...){
 
@@ -80,7 +80,7 @@ thesis_gitbook <- function(...){
 #' the Reed Senior Thesis Word template
 #' @examples
 #' \dontrun{
-#'  output: gauchodown::thesis_word
+#'  output: bruindown::thesis_word
 #' }
 thesis_word <- function(...){
 
@@ -105,7 +105,7 @@ thesis_word <- function(...){
 #' @return A ebook version of the thesis
 #' @examples
 #' \dontrun{
-#'  output: gauchodown::thesis_epub
+#'  output: bruindown::thesis_epub
 #' }
 thesis_epub <- function(...){
 
@@ -130,7 +130,6 @@ fix_envs = function(x){
   if (length(i3)) x = x[-i3]
   x
 }
-
 
 #' Makes R CMD check quieter
 #'
