@@ -1,248 +1,109 @@
-%%%---PREAMBLE---%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[twoside,12pt,final]{ucthesis-CA2012}
 
-% fix for pandoc 1.14
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\documentclass [PhD] {uclathes}
 
-%--- Packages ---------------------------------------------------------
-\usepackage[lofdepth,lotdepth,caption=false]{subfig}
-\usepackage{fancyhdr}
-\usepackage{amsmath, amssymb, graphicx}
-\usepackage{xspace}
-\usepackage{braket}
-\usepackage{color}
-\usepackage{setspace}
-\usepackage{fancyvrb}
-\usepackage{array}
-\usepackage{ifxetex,ifluatex}
-\usepackage{etoolbox}
-\usepackage{booktabs}
-\usepackage{xcolor}
-\usepackage{tabu}
-\usepackage{longtable}
-\usepackage{titlesec}
-%---New Definitions and Commands------------------------------------------------------
+% \input {mymacros}                         % personal LaTeX macros
 
-\newtheorem{theorem}{Jibberish}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Usually things live in separate flies.
+%
+% \input {prelim}                           % preliminary page info
 
-\bibliography{references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%                          PRELIMINARY PAGES                           %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hyphenation{mar-gin-al-ia}
+\title          {$title$}
+\author         {$author$}
+\department     {$department$}
+% Note:  degreeyear should be optional, but as of  5-Feb-96
+% it seems required or you get a year of ``2''.   -johnh
+\degreeyear     {$degreeyr$}
 
-% from uw_template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% commands and environments needed by pandoc snippets
-% extracted from the output of `pandoc -s`
-%% Make R markdown code chunks work
+\chair          {$chair$}
+\member         {$member1$}
+\member         {$member2$}
+\member         {$member3$}
+\member         {$member4$}
 
-\ifxetex
-  \usepackage{fontspec,xltxtra,xunicode}
-  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-\else
-  \ifluatex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-  \else
-    \usepackage[utf8]{inputenc}
-  \fi
-\fi
-\DefineShortVerb[commandchars=\\\{\}]{\|}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
-\newcommand{\RegionMarkerTok}[1]{{#1}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
-\newcommand{\NormalTok}[1]{{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifxetex
-  \usepackage[setpagesize=false, % page size defined by xetex
-              unicode=false, % unicode breaks when used with xetex
-              xetex,
-              colorlinks=true,
-              linkcolor=blue]{hyperref}
-\else
-  \usepackage[unicode=true,
-              colorlinks=true,
-              linkcolor=blue]{hyperref}
-\fi
-\hypersetup{breaklinks=true, pdfborder={0 0 0}}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\setcounter{secnumdepth}{0}
+\dedication     {$dedication$}
 
-%---Set Margins ------------------------------------------------------
-\setlength\oddsidemargin{0.25 in} \setlength\evensidemargin{0.25 in} \setlength\textwidth{6.25 in} \setlength\textheight{8.50 in}
-\setlength\footskip{0.25 in} \setlength\topmargin{0 in} \setlength\headheight{0.25 in} \setlength\headsep{0.25 in}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%---DOCUMENT---%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgments {$acknowledgments$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VVVVVV EDIT THIS SECTION VVVVVV
+
+\vitaitem   {1974--1975}
+                {Campus computer center ``User Services'' programmer and
+                consultant, Stanford Center for Information Processing,
+                Stanford University, Stanford, California.}
+\vitaitem   {1974--1975}
+                {Programmer, Housing Office, Stanford University.
+                Designed a major software system for assigning
+                students to on-campus housing.
+                With some later improvements, it is still in use.}
+\vitaitem   {1975}
+                {B.S.~(Mathematics) and A.B.~(Music),
+                Stanford University.}
+\vitaitem   {1977}
+                {M.A.~(Music), UCLA, Los Angeles, California.}
+\vitaitem   {1977--1979}
+                {Teaching Assistant, Computer Science Department, UCLA.
+                Taught sections of Engineering 10 (beginning computer
+                programming course) under direction of Professor Leon
+                Levine.
+                During summer 1979, taught a beginning programming
+                course as part of the Freshman Summer Program.}
+\vitaitem   {1979}
+                {M.S.~(Computer Science), UCLA.}
+\vitaitem   {1979--1980}
+                {Teaching Assistant, Computer Science Department, UCLA.}
+\vitaitem   {1980--1981}
+                {Research Assistant, Computer Science Department, UCLA.}
+\vitaitem   {1981--present}
+                {Programmer/Analyst, Computer Science Department, UCLA.}
+
+\publication    {\textsl{MADHOUS Reference Manual.}
+                Stanford University, Dean of Student Affairs
+                (Residential Education Division), 1978.
+                Technical documentation for the MADHOUS
+                software system used to assign students to
+                on-campus housing.}
+
+
+% STOP EDITTING HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+  \addcontentsline{toc}{chapter}{Abstract}
+  $abstract$
+\end{abstract}
+
+\tableofcontents
+
+$if(lot)$
+\listoftables
+$endif$
+
+$if(lof)$
+\listoffigures
+$endif$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \begin{document}
-
-%=== Preliminary Pages ============================================
-\begin{ucfrontmatter}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % TITLE PAGE INFORMATION %
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  \title{$title$}
-
-  \author{$author$}
-
-  \report{Dissertation} \degree{Doctor of Philosophy} \degreemonth{$degree_month$} \degreeyear{$degree_year$}
-  \defensemonth{$defense_month$}
-  \defenseyear{$defense_year$}
-
-  \chair{$chair$}  % this is your advisor
-  \othermemberA{$signature1$} % This is a member of your committee
-  \othermemberB{$signature2$} % This is a member of your committee
-  \othermemberC{$signature3$} % This is a member of your committee (if your department requires 4 members)
-  \numberofmembers{4} % should match the number of entries above (chair + othermembers)
-
-  \field{$program$}
-  \campus{$uc_campus$}
-	\maketitle
-	\approvalpage
-	\copyrightpage
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % DEDICATION PAGE INFORMATION %
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    \begin{dedication}
-
-      \vspace*{25ex}
-
-      \begin{center}
-      \begin{Large}
-
-        $dedication$
-
-      \end{Large}
-
-      \end{center}
-
-  \end{dedication}
-  \begin{acknowledgements}
-    $acknowledgments$
-  \end{acknowledgements}
-  %%%%%%
-  % CV %
-  %%%%%%
-  \begin{vitae}
-    \addcontentsline{toc}{chapter}{Curriculum Vitae}
-
-    \begin{vitaesection}{Education}
-    \vspace{-0.1cm}
-    \item [2018]	Ph.D. in Environmental Science and Management (Expected), University of California, Santa Barbara.
-    \item [2010]	MESM in in Environmental Science and Management, University of California, Santa Barbara.
-    \item [2007]	B.S. in Ecosystem Science and Policy and Biology, University of Miami
-    \end{vitaesection}
-
-    \textbf{Publications}
-
-    Anderson, S.C., Cooper, A.B., Jensen, O.P., Minto, C., Thorson, J.T., Walsh, J.C., Afflerbach, J., Dickey‐Collas, M., Kleisner, K.M., Longo, C., Osio, G.C., Ovando, D., Mosqueira, I., Rosenberg, A.A., Selig, E.R., n.d. Improving estimates of population status and trend with superensemble models. Fish and Fisheries 18, 732–741. https://doi.org/10.1111/faf.12200
-
- Burgess, M.G., McDermott, G.R., Owashi, B., Reeves, L.E.P., Clavelle, T., Ovando, D., Wallace, B.P., Lewison, R.L., Gaines, S.D., Costello, C., 2018. Protecting marine mammals, turtles, and birds by rebuilding global fisheries. Science 359, 1255–1258. https://doi.org/10.1126/science.aao4248
-
-Costello, C., Ovando, D., Clavelle, T., Strauss, C.K., Hilborn, R., Melnychuk, M.C., Branch, T.A., Gaines, S.D., Szuwalski, C.S., Cabral, R.B., Rader, D.N., Leland, A., 2016. Global fishery prospects under contrasting management regimes. PNAS 113, 5125–5129. https://doi.org/10.1073/pnas.1520420113
-
-Costello, C., Ovando, D., Hilborn, R., Gaines, S.D., Deschenes, O., Lester, S.E., 2012. Status and Solutions for the World’s Unassessed Fisheries. Science 338, 517–520. https://doi.org/10.1126/science.1223389
-
-Dowling, N., Wilson, J., Rudd, M., Babcock, E., Caillaux, M., Cope, J., Dougherty, D., Fujita, R., Gedamke, T., Gleason, M., Guttierrez, M., Hordyk, A., Maina, G., Mous, P., Ovando, D., Parma, A., Prince, J., Revenga, C., Rude, J., Szuwalski, C., Valencia, S., Victor, S., 2016. FishPath: A Decision Support System for Assessing and Managing Data- and Capacity- Limited Fisheries, in: Quinn II, T., Armstrong, J., Baker, M., Heifetz, J., Witherell, D. (Eds.), Assessing and Managing Data-Limited Fish Stocks. Alaska Sea Grant, University of Alaska Fairbansk.
-
-Fogarty, M.J., Rosenberg, A.A., Cooper, A.B., Dickey-Collas, M., Fulton, E.A., Gutiérrez, N.L., Hyde, K.J.W., Kleisner, K.M., Kristiansen, T., Longo, C., Minte-Vera, C.V., Minto, C., Mosqueira, I., Osio, G.C., Ovando, D., Selig, E.R., Thorson, J.T., Ye, Y., 2016. Fishery production potential of large marine ecosystems: A prototype analysis. Environmental Development, SI:Ecosystem-based LME Mgt 17, Supplement 1, 211–219. https://doi.org/10.1016/j.envdev.2016.02.001
-
-Hammerschlag, N., Ovando, D., Serafy, J.E., 2010. Seasonal diet and feeding habits of juvenile fishes foraging along a subtropical marine ecotone. Aquatic Biology 9, 279–290.
-Hilborn, R., Ovando, D., 2014. Reflections on the success of traditional fisheries management. ICES J. Mar. Sci. 71, 1040–1046. https://doi.org/10.1093/icesjms/fsu034
-
-Ovando, D., Dougherty, D., Wilson, J.R., 2016a. Market and design solutions to the short-term economic impacts of marine reserves. Fish Fish n/a-n/a. https://doi.org/10.1111/faf.12153
-
-Ovando, D., Poon, S., Costello, C., 2016b. Opportunities and precautions for integrating cooperation and individual transferable quotas with territorial use rights in fisheries. Bulletin of Marine Science.
-
-Ovando, D., Deacon, R.T., Lester, S.E., Costello, C., Van Leuvan, T., McIlwain, K., Strauss, K.C., Arbuckle, M., Fujita, R., Gelcich, S., Uchida, H., 2013. Conservation incentives and collective choices in cooperative fisheries. Marine Policy 37, 132–140. https://doi.org/10.1016/j.marpol.2012.03.012
-Rahimi, S., Gaines, S.D., Gelcich, S., Deacon, R., Ovando, D., 2016. Factors driving the implementation of fishery reforms. Marine Policy 71, 222–228. https://doi.org/10.1016/j.marpol.2016.06.005
-
-Rosenberg, A.A., Fogarty, M.J., Cooper, A.B., Dickey-Collas, M., Fulton, E.A., Gutiérrez, N.L., Hyde, K.J.W., Kleisner, K.M., Kristiansen, T., Longo, C., Minte-Vera, C., Minto, C., Mosqueira, I., Chato Osio, G., Ovando, D., Selig, E.R., Thorson, J.T., Ye, Y., 2014. Developing new approaches to global stock status assessment and fishery production potential of the seas, FAO Fisheries and Aquaculture Circular. Food and Agriculture Organization of the United Nations.
-
-Rosenberg, A.A., Kleisner, K.M., Afflerbach, J., Anderson, S.C., Dickey-Collas, M., Cooper, A.B., Fogarty, M.J., Fulton, E.A., Gutiérrez, N.L., Hyde, K.J.W., Jardim, E., Jensen, O.P., Kristiansen, T., Longo, C., Minte-Vera, C.V., Minto, C., Mosqueira, I., Osio, G.C., Ovando, D., Selig, E.R., Thorson, J.T., Walsh, J.C., Ye, Y., 2017. Applying a New Ensemble Approach to Estimating Stock Status of Marine Fisheries around the World. CONSERVATION LETTERS n/a-n/a. https://doi.org/10.1111/conl.12363
-
-Szuwalski, C.S., Castrejon, M., Ovando, D., Chasco, B., 2016. An integrated stock assessment for red spiny lobster (Panulirus penicillatus) from the Galapagos Marine Reserve. Fisheries Research 177, 82–94. https://doi.org/10.1016/j.fishres.2016.01.002
-
-
-  \end{vitae}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % ABSTRACT %
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{abstract}
-    \addcontentsline{toc}{chapter}{Abstract}
-    %todo: max 350 words
-
-    $abstract$
-
-    %\abstractsignature
-  \end{abstract}
-	\tableofcontents
-
-	$if(lot)$
-  \listoftables
-  $endif$
-
-  $if(lof)$
-  \listoffigures
-  $endif$
-
-\end{ucfrontmatter}
-
-\begin{ucmainmatter}
+\makeintropages
 
 $body$
 
-\end{ucmainmatter}
-
 \end{document}
-
-
-%---Set Headers and Footers ------------------------------------------------------
-\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{{\sf #1 \hspace*{\fill} Chapter~\thechapter}}{} }
-\renewcommand{\sectionmark}[1]{\markright{ {\sf Section~\thesection \hspace*{\fill} #1 }}}
-\fancyhf{}
-
-\makeatletter \if@twoside \fancyhead[LO]{\small \rightmark} \fancyhead[RE]{\small\leftmark} \else \fancyhead[LO]{\small\leftmark}
-\fancyhead[RE]{\small\rightmark} \fi
-
-\def\cleardoublepage{\clearpage\if@openright \ifodd\c@page\else
-  \hbox{}
-  \vspace*{\fill}
-  \begin{center}
-    This page intentionally left blank
-  \end{center}
-  \vspace{\fill}
-  \thispagestyle{plain}
-  \newpage
-  \fi \fi}
-\makeatother
-\fancyfoot[c]{\textrm{\textup{\thepage}}} % page number
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-
-\fancypagestyle{plain} { \fancyhf{} \fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}}
-
