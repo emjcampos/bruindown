@@ -3,20 +3,17 @@
 title: "Dissertation Title"
 author: "Author"
 degree_year: "Degree Year"
-degree_month: "Degree Month"
-defense_year: "Defense Year"
-defense_month: "Defense Month"
-program: "Program"
-uc_campus: "Los Angeles"
-report: "Dissertation"
-degree: "Doctor of Philosphy"
+department: "Department"
 chair: "Professor Chair"
-signature1: "Professor Committee Member 1"
-signature2: "Professor Committee Member 2"
-signature3: "Professor Committee Member 3"
-abstract: "Abstract"
-acknowledgments: "Thanks everyone!"
-dedication: "To you"
+member1: "Professor Committee Member 1"
+member2: "Professor Committee Member 2"
+member3: "Professor Committee Member 3"
+abstract: |
+  `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
+acknowledgments: |
+  I want to thank a few people.
+dedication: |
+  You can have a dedication here if you wish. 
 # End of UCLA thesis fields
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
@@ -28,15 +25,6 @@ output:
   # bruindown::thesis_epub: default
 bibliography: bib/thesis.bib # Put your bibliography file in the bib folder
 csl: csl/ieee-with-url.csl # Keep your specific csl file in the csl folder
-link-citations: yes
-linkcolor: blue
-citecolor: blue
-urlcolor: blue
-lot: true # create list of tables
-lof: true # create list of figures
-# space_between_paragraphs: true
-# Delete the # at the beginning of the previous line if you'd like to have a 
-# blank new line between each paragraph
 
 # Include LaTeX packages here:
 header-includes:
@@ -47,10 +35,6 @@ header-includes:
 Above is the YAML (YAML Ain't Markup Language) header that includes a lot of metadata used to produce the document.  Be careful with spacing in this header!
 
 If you'd like to include a comment that won't be produced in your resulting file enclose it in a block like this.
--->
-
-<!--
-If you receive a duplicate label error after knitting, make sure to delete the index.Rmd file and then knit again.
 -->
 
 ```{r include_packages, include = FALSE}
