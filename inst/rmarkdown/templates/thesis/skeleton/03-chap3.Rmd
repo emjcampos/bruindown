@@ -13,7 +13,7 @@ if(!require(ggplot2))
     install.packages("bookdown", repos = "http://cran.rstudio.com")
 if(!require(gauchodown)){
   library(devtools)
-  devtools::install_github("benmarwick/gauchodown")
+  devtools::install_github("emjcampos/bruindown")
   }
 library(gauchodown)
 flights <- read.csv("data/flights.csv")
@@ -66,9 +66,6 @@ If you need a graphic or tabular material to be part of the text, you can just p
 
 In the **R** chunk below, we will load in a picture stored as `uw.png` in our main directory.  We then give it the caption of "UW logo", the label of "uwlogo", and specify that this is a figure.  Make note of the different **R** chunk options that are given in the R Markdown file (not shown in the knitted document).
 
-```{r uwlogo, fig.cap="UW logo"}
-include_graphics(path = "figure/uw.png")
-```
 
 Here is a reference to the UW logo: Figure \@ref(fig:uwlogo).  Note the use of the `fig:` code here.  By naming the **R** chunk that contains the figure, we can then reference that figure later as done in the first sentence here.  We can also specify the caption for the figure via the R chunk option `fig.cap`.
 
@@ -93,9 +90,6 @@ A table linking these carrier codes to airline names is available at <https://gi
 
 Next, we will explore the use of the `out.extra` chunk option, which can be used to shrink or expand an image loaded from a file by specifying `"scale= "`. Here we use the mathematical graph stored in the "subdivision.pdf" file.
 
-```{r subd, results="asis", echo=FALSE, fig.cap="Subdiv. graph", out.extra="scale=0.75"}
-include_graphics("figure/subdivision.pdf")
-```
 
 Here is a reference to this image: Figure \@ref(fig:subd).  Note that `echo=FALSE` is specified so that the **R** code is hidden in the document.
 
@@ -103,9 +97,6 @@ Here is a reference to this image: Figure \@ref(fig:subd).  Note that `echo=FALS
 
 Lastly, we will explore how to rotate and enlarge figures using the `out.extra` chunk option.  (Currently this only works in the PDF version of the book.)
 
-```{r subd2, results="asis", echo=FALSE, out.extra="angle=180, scale=1.1", fig.cap="A Larger Figure, Flipped Upside Down"}
-include_graphics("figure/subdivision.pdf")
-```
 
 As another example, here is a reference: Figure \@ref(fig:subd2).  
 
