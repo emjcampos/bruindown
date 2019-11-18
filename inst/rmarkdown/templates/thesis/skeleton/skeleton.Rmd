@@ -8,8 +8,7 @@ chair: "Professor Chair"
 member1: "Professor Committee Member 1"
 member2: "Professor Committee Member 2"
 member3: "Professor Committee Member 3"
-abstract: |
-  `r if(knitr:::is_latex_output()) paste(readLines("00-abstract.Rmd"), collapse = '\n  ')`
+abstract: "Abstract"
 acknowledgments: "I want to thank a few people."
 dedication: "You can have a dedication here if you wish."
 # End of UCLA thesis fields
