@@ -1,6 +1,6 @@
  
 
-# bruindown <img src="inst/rmarkdown/templates/thesis/skeleton/figure/ucla_seal.png" align="right" style="width:150px;height:150px;" />
+# bruindown <img src="inst/rmarkdown/templates/thesis/skeleton/figure/ucla_seal.png" align="right" height = "138.5"/>
 
 This project provides a template for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the University California, Los Angeles](https://grad.ucla.edu/academics/graduate-study/thesis-and-dissertation-filing-requirements/). It uses the University of California Thesis Class to convert R Markdown files into a PDF formatted ready for submission at UCLA. This package is a more or less direct copy of `gauchodown`, with modifications as needed to deal with UCLA's requirements. Huge thanks to
 
