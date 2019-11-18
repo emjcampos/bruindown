@@ -2,7 +2,7 @@
 # UCLA thesis fields
 title: "Dissertation Title"
 author: "Author"
-degree_year: "Degree Year"
+degreeyr: "Degree Year"
 department: "Department"
 chair: "Professor Chair"
 member1: "Professor Committee Member 1"

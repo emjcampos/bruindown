@@ -1,4 +1,4 @@
   
 The preface pretty much says it all.  \par
 
-Second paragraph of abstract starts here.
+Second paragraph of abstract starts here. Make sure to leave an extra empty line at the end of the document. 
