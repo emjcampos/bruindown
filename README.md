@@ -1,9 +1,10 @@
  
 
-# gauchodown <img src="inst/rmarkdown/templates/thesis/skeleton/figure/ucsbwave-blue.png" align="right" />
+# bruindown <img src="inst/rmarkdown/templates/thesis/skeleton/figure/ucla_seal.png" align="right" style="width:150px;height:150px;" />
 
-This project provides a template for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the University California, Santa Barbara](http://www.graddiv.ucsb.edu/academic/Filing-Your-Thesis-Dissertation-DMA-Document). It uses the University of California Thesis Class to convert R Markdown files into a PDF formatted ready for submission at UCSB. This package is a more or less direct copy of `huskydown`, with modifications as needed to deal with UCSB's requirements.  Huge thanks to
+This project provides a template for writing a PhD dissertation in R Markdown, and rendering those files into a PDF formatted according to [the requirements of the University California, Los Angeles](https://grad.ucla.edu/academics/graduate-study/thesis-and-dissertation-filing-requirements/). It uses the University of California Thesis Class to convert R Markdown files into a PDF formatted ready for submission at UCLA. This package is a more or less direct copy of `gauchodown`, with modifications as needed to deal with UCLA's requirements. Huge thanks to
 
+-[gauchodown](https://github.com/DanOvando/gauchodown)
 
 -[huskydown](https://github.com/benmarwick/huskydown)
 
@@ -13,85 +14,57 @@ This project provides a template for writing a PhD dissertation in R Markdown, a
 
 Currently, the PDF and gitbook versions are fully-functional, and are the focus of this package. The word and epub versions are in development, have no templates behind them, and are essentially calls to the appropriate functions in bookdown.
 
-If you are new to working with `bookdown` and `rmarkdown`, please read over the documentation available in gauchodown PDF template (which you can create by following the simple instructions below) and the [bookdown book](https://bookdown.org/yihui/bookdown/).
+If you are new to working with `bookdown` and `rmarkdown`, please read over the documentation available in bruindown PDF template (which you can create by following the simple instructions below) and the [bookdown book](https://bookdown.org/yihui/bookdown/).
 
 Under the hood, the University of California Dissertation LaTeX template is used to ensure that documents conform precisely to submission standards. At the same time, composition and formatting can be done using lightweight [markdown](http://rmarkdown.rstudio.com/authoring_basics.html) syntax, and **R** code and its output can be seamlessly included using [rmarkdown](http://rmarkdown.rstudio.com).
 
-## Using gauchodown to write your dissertation
+## Using bruindown to write your dissertation
 
 ### Initial setup
 
-Using **gauchodown** has some prerequisites, such as Pandoc, LaTeX and some fonts. To compile PDF documents using **R**, you need to have Pandoc, LaTeX and several related packages installed. If you have a recent version of  [RStudio](http://www.rstudio.com/products/rstudio/download/), then you already have Pandoc and don't need to do anything more about that. 
-
-Next is LaTeX. By far the easiest way to install LaTeX on any platform is with the [`tinytex`](https://yihui.name/tinytex/) package:
-
-```
-install.packages(c('tinytex', 'rmarkdown'))
-tinytex::install_tinytex()
-# after restarting RStudio, confirm that you have LaTeX with 
-tinytex:::is_tinytex()
-```
-
-Our PDF template requires some specific fonts, [EB Garamond](https://github.com/georgd/EB-Garamond), [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/) and [Lato](http://www.latofonts.com/lato-free-fonts/). These are included in this repository. You need to install these before proceeding, either by using your usual method of installing fonts, or following these instructions:
-
-On a Linux system here's the simplest way to install the fonts:
-
-```
-git clone https://github.com/benmarwick/huskydown
-cd huskydown && unzip inst/fonts.zip
-cp inst/fonts -r ~/usr/local/share/fonts
-sudo fc-cache -f -v
-```
-
-On an OSX system you can download a copy of the fonts in this repository with <https://github.com/benmarwick/huskydown/raw/master/inst/fonts.zip>, unzip and move them to your fonts directory, or, assuming [homebrew](https://brew.sh/) is installed and updated, this will get you the fonts needed for this template:
-
-```
-brew update
-brew tap caskroom/fonts
-brew cask install font-eb-garamond font-source-code-pro font-lato
-```
-
-On Windows the usual pointing and clicking is required to install the fonts listed above. You can download a copy of the fonts in this repository at <https://github.com/benmarwick/huskydown/raw/master/inst/fonts.zip>, unzip and move them to your fonts directory. 
+Using **bruindown** has some prerequisites, such as Pandoc and LaTeX. To compile PDF documents using **R**, you need to have Pandoc, LaTeX and several related packages installed. If you have a recent version of  [RStudio](http://www.rstudio.com/products/rstudio/download/), then you already have Pandoc and don't need to do anything more about that. 
 
 ### Starting to write your thesis
 
-To use `gauchodown` from [RStudio](http://www.rstudio.com/products/rstudio/download/):
+To use `bruindown` from [RStudio](http://www.rstudio.com/products/rstudio/download/):
 
-1) Ensure that you have already installed LaTeX and the fonts described above, and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/). You can use `gauchodown` without RStudio. For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)). But RStudio is probably the easiest tool for writing both R code and text in your thesis. 
+1) Ensure that you have already installed LaTeX and are using the latest version of [RStudio](http://www.rstudio.com/products/rstudio/download/). You can use `bruindown` without RStudio. For example, you can write the Rmd files in your favourite text editor (e.g. [Atom](https://atom.io/), [Notepad++](https://notepad-plus-plus.org/)). But RStudio is probably the easiest tool for writing both R code and text in your thesis. 
 
-2) Install the `bookdown` and `gauchodown` packages: 
+2) Install the `bookdown` and `bruindown` packages: 
 
 ```
 if (!require("devtools")) install.packages("devtools", repos = "http://cran.rstudio.org")
 install.packages("bookdown")
-devtools::install_github("danovando/gauchodown")
+devtools::install_github("emjcampos/bruindown")
 ```
 
-3) Use the **New R Markdown** dialog to select **UCSB-Dissertation**, here are the steps, and a screenshot below:
+3) Use the **New R Markdown** dialog to select **UCLA-Dissertation**, here are the steps, and a screenshot below:
 
-File -> New File -> R Markdown... then choose 'From template', then choose 'UCSB-Dissertation, and enter `index` as the **Name**. Note that this will currently only **Knit** if you name the directory `index` at this step. 
+File -> New File -> R Markdown... then choose 'From template', then choose 'UCLA-Dissertation, and enter `index` as the **Name**. Note that this will currently only **Knit** if you name the directory `index` at this step. 
 
-![](gauchodown.png)
+<center>
+![](makefile.png){width=70%}
+</center>
 
 Or if you're not using RStudio, run this line in your R console to create a new PhD dissertation from the template:
 
 ```r
-rmarkdown::draft('index.Rmd', template = 'UCSB-Dissertation', package = 'gauchodown', create_dir = TRUE)
+rmarkdown::draft('index.Rmd', template = 'UCLA-Dissertation', package = 'bruindown', create_dir = TRUE)
 ```
 
 ### Starting your first draft
 
-Hopefully now you've got a nice looking repo and your index.Rmd file. The YAML (YAML ain't markup language) material at the start of index.Rmd contains a bunch of metadata for your dissertation. This is where you can enter your name, dissertation title, committee members, abstract, dedication, acknowledgements, etc. 
+Hopefully now you've got a nice looking repo and your index.Rmd file. The YAML (YAML ain't markup language) material at the start of index.Rmd contains a bunch of metadata for your dissertation. This is where you can enter your name, dissertation title, committee members, dedication, acknowledgements, etc. 
 
-UCSB's template also has a CV section that includes education and publications. I'm sure there's a way to automate this, but I'm not going to tackle it at this point. For now, to edit this section inside the repo created from your template
+UCLA's template also has a CV section that includes education and publications. I'm sure there's a way to automate this, but I'm not going to tackle it at this point. For now, to edit this section inside the repo created from your template
 
 1. Open up template.tex
 
-2. Scroll down to the block labeled "CV" (should be around line 147)
+2. Scroll down to the block that says "EDIT THIS SECTION" (should be around line 42)
 
 3. Modify the education section as needed
 
-4. For the publications, I just exported a bibliogrphy from [Zotero](http://zotero.org/) to my clipboard and pasted it here. The formatting isn't perfect but I'd call it good enough. If someone wants to take a stab at generating a sub-bibliography in this section that would be great!
+4. For the publications, I just exported a bibliography from [Zotero](http://zotero.org/) to my clipboard and pasted it here. The formatting isn't perfect but I'd call it good enough. If someone wants to take a stab at generating a sub-bibliography in this section that would be great!
 
 
 ### Chapter Short Titles
@@ -113,8 +86,9 @@ You can certainly use the same project to house all of the data and code for eac
 
 My dissertation had three chapters. For each chapter, I created a separate RStudio project and folder on my computer, call it "~/PhD/zissou" (I nickname all my projects). Inside that folder I stored the data, code, and paper .Rmd for the `zissou` chapter. When I wanted to actually knit the dissertation, rather than copy-and-pasting all the required results or data from `zissou` over to my `dissertation` folder, I simply used `knit_child` (and some voodoo in the chunk options).
 
-![](knit_child.png)
-
+<center>
+![](knit_child.png){width=70%}
+</center>
 
 ## Rendering
 
@@ -123,7 +97,7 @@ To render your thesis into a PDF, open `index.Rmd` in RStudio and then click the
 Alternatively, if you're not using RStudio, you can use this from the R console, assuming your have set the `'index/` directory as your working directory:
 
 ```r
-bookdown::render_book('index.Rmd', gauchodown::thesis_pdf(latex_engine = 'xelatex'))
+bookdown::render_book('index.Rmd', bruindown::thesis_pdf(latex_engine = 'xelatex'))
 ```
 
 The PDF file of your thesis will be deposited in the `_book/` directory.
@@ -182,11 +156,11 @@ If you would like to contribute to this project, please start by reading our [Gu
 <!--
 To update the PDF template stored in inst/ assuming we are at top level:
 
-rmarkdown::draft('index.Rmd', template = 'thesis', package = 'gauchodown', create_dir = TRUE, edit = FALSE)
+rmarkdown::draft('index.Rmd', template = 'thesis', package = 'bruindown', create_dir = TRUE, edit = FALSE)
 
 setwd('index')
 
-bookdown::render_book('index.Rmd', gauchodown::thesis_pdf(latex_engine = 'xelatex'))
+bookdown::render_book('index.Rmd', bruindown::thesis_pdf(latex_engine = 'xelatex'))
 
 -->
 
